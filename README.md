@@ -1,63 +1,72 @@
 # Android Structure Generation
 
-This script is used to generate a basic Activity-View-TouchListener structure for Android Custom View Projects in the current directory.
+This script is used to generate various code structures for Android projects. It is used to ease the process of creating Android Applications and Games.
 
-# *This project is currently undergoing major changes. README is NOT up to date.
+## Why?
+
+Basically, I got tired of not knowing how to structure my projects. I made a strict structure to follow along with this script to generate it.
+
+## Prerequisites
+
+- You must have [Node.js](http://nodejs.org) installed.
 
 ## Installation
 
 - `git clone https://github.com/Nitemaeric/android-generate-structure.git` to grab the script.
-- `npm install` just incase the node modules are missing.
+- `npm install` to install dependancies
+
+
+## Alias
+
+Alias the script for ease of use.
+
+```
+echo "alias ags='node <path_to_script>'" >> ~/.bash_profile
+```
+
+### From now on, we will assume that you have aliased the 'ags' command
+
+===
 
 ## Usage
 
-**Be sure that you have changed into your desired directory**
-
-Otherwise it will cause an error, as the script searches for com."organisation_name".... pattern.
-
-\<path_to_script\> being where the project and "generate.js" file is saved.
-
-\<desired_name\> being the name of the files you desire.
-
 ```
-node <path_to_script> <desired_name>
+ags <generation_type> <name>
 ```
 
-```	
-Current Directory
-|-> Activity
-|-> View
-|-> TouchListener
-```
+Where:
 
-### Aliasing
+<i>\<generation_type\></i> is the generation type and <i>\<name\></i> is your desired name.
 
-To simplify the usage of this script, assign it to a bash alias.
+<i>\<generation_type\></i> ignores character case.
 
-```
-echo "alias and-gen-struct='node <path_to_script>'" >> ~/.bash_profile
-```
+<i>\<name\></i> is capitalised. (Upper Case of first letter)
 
-and then use the script as
+## Generation Types
 
-```
-and-gen-struct <desired_name>
-```
+* Activity
+	* Activity
+	* View
+	* TouchListener
+* GameObject
+
 
 ## Example
 
 If you typed:
 
 ```
-node /Users/username/Desktop/android-generate-structure/generate Unit
+ags activity main
 ```
 
-it would generate the following files in the current directory:
+it would generate the following files in the 'Main' directory:
 
 ```
-- UnitActivity.java
-- UnitView.java
-- UnitTouchListener.java
+Current Directory of Terminal
+|-> Main
+	|-> MainActivity.java
+	|-> MainView.java
+	|-> MainTouchListener.java
 ```
 	
 ## Generated File Template
@@ -79,3 +88,7 @@ TODO
 ```
 TODO
 ```
+
+## Additional Info and Links
+
+* [Lazy Fox Productions](http://www.lazyfoxproductions.com)
